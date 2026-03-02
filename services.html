@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>PALOMA BEAUTY – Services</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --rose-poudre:#F8D7E3; --blanc:#FFFFFF; --gris-doux:#F4F4F4; --noir:#000000; --or-rose:#C49B9B; }
+  body { font-family:'Poppins',sans-serif; color:var(--noir); line-height:1.6; }
+  h1,h2,h3 { font-family:'Playfair Display',serif; }
+  /* Navigation */
+  nav { background:var(--blanc); padding:1.5rem 5%; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
+  nav .container { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+  .logo a { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--or-rose); text-decoration:none; }
+  nav ul { display:flex; list-style:none; gap:2rem; }
+  nav a { text-decoration:none; color:var(--noir); font-weight:500; transition:color .3s; }
+  nav a:hover, nav a.active { color:var(--or-rose); }
+  /* Hero */
+  .hero { background:linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url('palomab.png'); background-size:cover; background-position:center; height:90vh; display:flex; align-items:center; justify-content:center; text-align:center; color:var(--blanc); }
+  .hero-content h1 { font-size:4rem; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.5); }
+  .hero-content p { font-size:1.5rem; margin-bottom:2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.5); }
+  .btn { display:inline-block; padding:1rem 2.5rem; background:var(--or-rose); color:var(--blanc); text-decoration:none; border-radius:50px; font-weight:600; transition:all .3s; border:none; cursor:pointer; }
+  .btn:hover { background:#9e7e7e; transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,.3); }
+  /* Sections */
+  section { padding:5rem 5%; max-width:1200px; margin:0 auto; }
+  .section-title { text-align:center; font-size:2.5rem; margin-bottom:3rem; color:var(--or-rose); }
+  /* Avantages */
+  .avantages { background:var(--gris-doux); }
+  .avantages-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; }
+  .avantage-card { background:var(--blanc); padding:2rem; border-radius:20px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform .3s; }
+  .avantage-card:hover { transform:translateY(-10px); }
+  .avantage-card i { font-size:3rem; color:var(--or-rose); margin-bottom:1rem; }
+  .avantage-card h3 { margin-bottom:1rem; font-size:1.3rem; }
+  /* Services cards */
+  .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+  .service-card { background:var(--blanc); border-radius:20px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.1); transition:transform .3s; }
+  .service-card:hover { transform:scale(1.05); }
+  .service-img { width:100%; height:250px; background:linear-gradient(135deg, var(--rose-poudre), var(--or-rose)); display:flex; align-items:center; justify-content:center; }
+  .service-img i { font-size:5rem; color:var(--blanc); }
+  .service-content { padding:1.5rem; }
+  .service-content h3 { margin-bottom:1rem; color:var(--or-rose); }
+  /* About */
+  .about-content { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+  .about-img-1 { width:100%; height:400px; background-image:url('paloma.png'); background-size:cover; background-position:center; background-repeat:no-repeat; border-radius:20px; display:flex; align-items:center; justify-content:center; }
+  .about-img-2 { width:100%; height:400px; background-image:url('apropos.jpeg'); background-size:cover; background-position:center; background-repeat:no-repeat; border-radius:20px; display:flex; align-items:center; justify-content:center; }
+  .about-text h2 { margin-bottom:1.5rem; color:var(--or-rose); }
+  .about-text p { margin-bottom:1rem; text-align:justify; }
+  /* Gallery */
+  .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:1.5rem; }
+  .gallery-item-1,.gallery-item-2,.gallery-item-3,.gallery-item-4,.gallery-item-5,.gallery-item-6,.gallery-item-7,.gallery-item-8,.gallery-item-9 {
+    height:300px; background:linear-gradient(135deg, var(--rose-poudre), var(--or-rose)); border-radius:15px; overflow:hidden; position:relative; cursor:pointer; transition:transform .3s; background-size:cover; background-position:center;
+  }
+  .gallery-item-1{ background-image:url('1.jpeg'); }
+  .gallery-item-2{ background-image:url('2.jpeg'); }
+  .gallery-item-3{ background-image:url('3.jpeg'); }
+  .gallery-item-4{ background-image:url('4.jpeg'); }
+  .gallery-item-5{ background-image:url('5.jpeg'); }
+  .gallery-item-6{ background-image:url('6.jpeg'); }
+  .gallery-item-7{ background-image:url('7.jpeg'); }
+  .gallery-item-8{ background-image:url('8.jpeg'); }
+  .gallery-item-9{ background-image:url('12.jpeg'); }
+  .gallery-grid > div:hover { transform:scale(1.05); }
+  /* Contact */
+  .contact-container { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+  .form-group { margin-bottom:1.5rem; }
+  .form-group label { display:block; margin-bottom:.5rem; font-weight:500; }
+  .form-group input, .form-group select, .form-group textarea { width:100%; padding:1rem; border:2px solid var(--gris-doux); border-radius:10px; font-family:'Poppins',sans-serif; transition:border-color .3s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color:var(--or-rose); }
+  .contact-info { background:var(--gris-doux); padding:2rem; border-radius:20px; }
+  .contact-info h3 { color:var(--or-rose); margin-bottom:1.5rem; }
+  .contact-item { display:flex; align-items:center; margin-bottom:1.5rem; }
+  .contact-item i { font-size:1.5rem; color:var(--or-rose); margin-right:1rem; width:30px; }
+  /* Footer */
+  footer { background:var(--noir); color:var(--blanc); padding:3rem 5%; text-align:center; }
+  .footer-content { max-width:1200px; margin:0 auto; }
+  .social-links { display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
+  .social-links a { color:var(--blanc); font-size:1.8rem; transition:color .3s; }
+  .social-links a:hover { color:var(--or-rose); }
+  html { scroll-behavior:smooth; }
+  /* Responsive */
+  @media (max-width:768px){
+    .hero-content h1 { font-size:2.5rem; }
+    .about-content, .contact-container { grid-template-columns:1fr; }
+    nav ul { gap:1rem; font-size:.9rem; }
+    .services-grid, .gallery-grid { grid-template-columns:1fr; }
+  }
+  /* Services détaillés */
+  .services-detail { background:var(--gris-doux); padding:3rem 0; }
+  .service-category { background:var(--blanc); padding:2rem; border-radius:20px; margin-bottom:2rem; }
+  .service-category h3 { color:var(--or-rose); margin-bottom:1.5rem; font-size:1.8rem; }
+  .service-list { list-style:none; }
+  .service-list li { padding:1rem; border-bottom:1px solid var(--gris-doux); display:flex; justify-content:space-between; align-items:center; }
+  .service-list li:last-child { border-bottom:none; }
+  .service-price { color:var(--or-rose); font-weight:600; font-size:1.1rem; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo"><a href="index.html">PALOMA BEAUTY</a></div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section style="padding-top: 8rem;">
+      <h2 class="section-title">Nos Services détaillés</h2>
+    </section>
+
+    <section class="services-detail">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+        <div class="service-category">
+          <h3><i class="fas fa-paint-brush"></i> Maquillage</h3>
+          <ul class="service-list">
+            <li><span>Maquillage soirée</span><span class="service-price">400 MAD</span></li>
+            <li><span>Maquillage mariée (essai inclus)</span><span class="service-price">800 MAD</span></li>
+            <li><span>Maquillage simple</span><span class="service-price">200 MAD</span></li>
+            <li><span>Maquillage permanent</span><span class="service-price">Sur devis</span></li>
+          </ul>
+        </div>
+
+        <div class="service-category">
+          <h3><i class="fas fa-hand-sparkles"></i> Onglerie</h3>
+          <ul class="service-list">
+            <li><span>Pose gel (mains)</span><span class="service-price">150 MAD</span></li>
+            <li><span>Manucure classique</span><span class="service-price">80 MAD</span></li>
+            <li><span>Pédicure complète</span><span class="service-price">120 MAD</span></li>
+            <li><span>Nail art (par ongle)</span><span class="service-price">20 MAD</span></li>
+            <li><span>Remplissage gel</span><span class="service-price">100 MAD</span></li>
+          </ul>
+        </div>
+
+        <div class="service-category">
+          <h3><i class="fas fa-spa"></i> Soins visage</h3>
+          <ul class="service-list">
+            <li><span>Nettoyage profond du visage</span><span class="service-price">250 MAD</span></li>
+            <li><span>Hydratation intense</span><span class="service-price">300 MAD</span></li>
+            <li><span>Soin anti-âge</span><span class="service-price">400 MAD</span></li>
+            <li><span>Masque facial</span><span class="service-price">150 MAD</span></li>
+            <li><span>Épilation visage</span><span class="service-price">100 MAD</span></li>
+          </ul>
+        </div>
+
+        <div class="service-category">
+          <h3><i class="fas fa-cut"></i> Coiffure</h3>
+          <ul class="service-list">
+            <li><span>Coupe femme</span><span class="service-price">150 MAD</span></li>
+            <li><span>Brushing</span><span class="service-price">100 MAD</span></li>
+            <li><span>Chignons mariée</span><span class="service-price">500 MAD</span></li>
+            <li><span>Coloration complète</span><span class="service-price">400 MAD</span></li>
+            <li><span>Mèches/Balayage</span><span class="service-price">600 MAD</span></li>
+            <li><span>Lissage brésilien</span><span class="service-price">800 MAD</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <h3>PALOMA BEAUTY</h3>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p>© 2025 PALOMA BEAUTY. Tous droits réservés.</p>
+    </div>
+  </footer>
+</body>
+</html>
